@@ -2,7 +2,7 @@
 ( () => {
     var XiaisMe = {
         cpId: "CP_888666",
-        headIcon: "/page/animal-pet-1242.svg",
+        headIcon: "/page/res/animal-pet-1242.svg",
         license: true,
         licenseRemind: "会员时长 9999天",
         nicName: "momo",
