@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>你猜你猜你猜猜猜</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+        <script>
+            // var vConsole = new window.VConsole();
+        </script>
+        <script defer="defer" src="main.js"></script>
+    </head>
+    <body style="opacity: 0;">
+        <div id="vertical-layout">
+            <div id="left-button-layout">
+                <div id="android-recent-button" class="android-ctrl-button-layout">
+                    <img src="res/recent.svg" class="android-ctrl-button">
+                </div>
+                <div id="android-home-button" class="android-ctrl-button-layout">
+                    <img src="res/home.svg" class="android-ctrl-button">
+                </div>
+                <div id="android-back-button" class="android-ctrl-button-layout">
+                    <img src="res/back.svg" class="android-ctrl-button">
+                </div>
+            </div>
+            <div id="phone-layout">
+                <div id="phone-left-button"></div>
+                <div id="phone-out">
+                    <div id="phone-radius"></div>
+                    <img id="img-vertical-phone-screen" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+                    <div id="button-reconnect">重新连接</div>
+                </div>
+                <div id="phone-right-button-layout">
+                    <div id="phone-right-button-1"></div>
+                    <div id="phone-right-button-2"></div>
+                </div>
+            </div>
+            <div id="vertical-layout-right">
+                <div id="fullscreen-layout">
+                    <img id="fullscreen" src="res/fullscreen.svg">
+                    <div id="fullscreen-text">全屏/退出</div>
+                </div>
+                <div id="userInfoWindow">
+                    <div id="userInfoWindowIconLayout">
+                        <img id="userInfoIcon" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="width: 100%;height: 100%;border-radius: 1000px">
+                        <img id="userInfoVipIcon" src="res/vip.svg">
+                    </div>
+                    <div id="userInfoText">
+                        <div id="userInfoName" class="nick-name">未登陆</div>
+                        <div id="userInfoLicenseRemind">会员时长</div>
+                    </div>
+                </div>
+                <div id="light-layout">
+                    <div id="screen-light-layout" class="light-item-layout">
+                        <div id="screen-light" class="circle-light"></div>
+                        <div id="screen-light-text" class="circle-text">屏幕未连接</div>
+                    </div>
+                    <div id="ctrl-light-layout" class="light-item-layout">
+                        <div id="ctrl-light" class="circle-light"></div>
+                        <div id="ctrl-light-text" class="circle-text">控制未连接</div>
+                    </div>
+                </div>
+                <img id="vertical-layout-right-logo" src="">
+                <div id="info">
+                    <div style="display: flex;align-items: center">
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="horizontal-layout">
+            <img id="img-horizontal-phone-screen-video" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+            <img id="img-horizontal-phone-screen" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+            <div id="horizon-android-button-layout">
+                <div id="horizon-android-back-button" class="horizon-android-ctrl-button-layout">
+                    <img src="res/back.svg" class="android-ctrl-button">
+                </div>
+                <div id="horizon-android-home-button" class="horizon-android-ctrl-button-layout">
+                    <img src="res/home.svg" class="android-ctrl-button">
+                </div>
+                <div id="horizon-android-recent-button" class="horizon-android-ctrl-button-layout">
+                    <img src="res/recent.svg" class="android-ctrl-button">
+                </div>
+            </div>
+        </div>
+        <div id="tip-iframe-layout">
+            <div id="tip-card">
+                <div id="tip-back" class="android-ctrl-button-layout">
+                    <img src="res/back.svg" class="android-ctrl-button">
+                </div>
+                <iframe id="tip-iframe" src=""></iframe>
+            </div>
+        </div>
+        <div id="input-ip-layout">
+            <div id="input-ip-card">
+                <div id="input-ip-tip">请输入连接码</div>
+                <div id="ip-show"></div>
+                <table id="keyboard">
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 16px">取消</td>
+                        <td>0</td>
+                        <td style="font-size: 16px">连接</td>
+                    </tr>
+                </table>
+                <div id="use-safe-connect">
+                    跳过<br>
+                    <div id="use-safe-connect-tip">（通过安全代理自动连接）</div>
+                </div>
+            </div>
+        </div>
+        <div id="modal" style="display: none">
+            <div class="modal-content">
+                <h2 class="modal-title">请注意</h2>
+                <p class="modal-description">荣耀车联、三星车联，暂不支持蓝牙音频，所以采用浏览器播音方案，需要点击屏幕才能播放声音</p>
+                <button id="modal-button">我知道了</button>
+            </div>
+        </div>
+        <div id="loginDialog" class="mask" style="display: none">
+            <div class="dialogCard">
+                <div id="loginDialogTitle">请使用微信扫码登陆</div>
+                <div style="position: relative;display: flex;justify-content: center;align-items: center">
+                    <div id="weChatContainer"></div>
+                    <div id="loginLoadingView" class="loading-view" style="display: none"></div>
+                </div>
+                <div id="loginRemind">登陆后即可获得免费使用时长</div>
+            </div>
+        </div>
+        <div id="getUserInfoDialog" class="mask" style="display: none">
+            <div class="dialogCard">
+                <div class="dialogCardTitle">自动登陆中</div>
+                <div id="getUserInfoDialogLoadingLayout">
+                    <div id="getUserInfoIconLayout">
+                        <img id="getUserInfoIcon" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="width: 100%;height: 100%">
+                    </div>
+                    <div id="getUserInfoIconLoading" class="loading-view"></div>
+                </div>
+            </div>
+        </div>
+        <div id="retryGetUserInfoDialog" class="mask" style="display: none">
+            <div class="dialogCard">
+                <div class="dialogCardSmallTitle">网络异常，自动登陆失败</div>
+                <div id="retryGetUserInfo" class="cp-button">再次尝试</div>
+                <div id="retryGetUserInfoLogout" class="cp-button">退出登陆</div>
+            </div>
+        </div>
+        <div id="userInfoDialog" class="mask" style="display: none">
+            <div class="dialogCard">
+                <div id="userInfoDialogClose" class="android-ctrl-button-layout">
+                    <img src="res/back.svg" class="android-ctrl-button">
+                </div>
+                <div id="userInfoDialogTitle" class="nick-name">尊敬的用户</div>
+                <div id="userInfoDialogIconLayout">
+                    <img id="userInfoDialogIcon" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="border-radius: 1000px;width: 100%;height: 100%"/>
+                    <img id="userInfoDialogVipIcon" src="res/vip.svg">
+                </div>
+                <div id="userInfoDialogLicense"></div>
+                <div id="userInfoDialogCpId"></div>
+                <div id="userInfoDialogLogout" class="cp-button">退出登陆</div>
+            </div>
+        </div>
+        <div id="httpRemindDialog" style="display: none;width: 100vw;height: 100vh;background-color: #3D3D3D;position:fixed;z-index: 2;justify-content: center;align-items: center;color: #FFFFFF;flex-direction: column">
+            <div id="httpRemindUrlLayout"></div>
+            <div id="httpRemindText">请将地址中的字母 s 去掉，并重新访问</div>
+        </div>
+    </body>
+</html>
